@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Calculator from './components/Calculator'
 require('./assets/css/app.css')
+import Vuelidate from 'vuelidate'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSearch, faBars, faTimes, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -20,6 +21,7 @@ Vue.component('app-calculator', Calculator)
 
 Vue.use(router)
 Vue.use(BootstrapVue);
+Vue.use(Vuelidate)
 
 
 Vue.config.productionTip = false

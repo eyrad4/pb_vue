@@ -36,13 +36,31 @@ header .menu-link:hover{
   padding: 0 48px 48px;
   position: static !important;
 }
-.popup-menu nav{
+.popup-menu .container{
   height: 100%;
   width: 100%;
   padding: 48px 0 0 0;
   position: fixed;
-  background: #f4f4f4;
+  background: #fff;
   z-index: 1;
+  left: 0px;
+  max-width: 100%;
+}
+.popup-menu .container:after {
+  background: #f4f4f4;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 48px;
+  right: 48px;
+  bottom: 48px;
+  z-index: -1;
+}
+.popup-menu nav ul li a{
+  font-size: 18px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
 }
 .popup-menu.active{
   display: block;
@@ -131,6 +149,9 @@ header .menu-link:hover{
   height: auto;
   line-height: initial;
 }
+.popup-caclulator form input.is-valid{
+  border: 1px solid #a6a4a9;
+}
 .popup-caclulator .form-row > [class*="col-"]{
   padding-left: 15px;
 }
@@ -168,4 +189,5 @@ header .menu-link:hover{
 }
 .popup-caclulator .small-info{
   margin-top: 15px;
+  font-size: smaller;
 }

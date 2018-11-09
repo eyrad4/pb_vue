@@ -13,20 +13,36 @@
             <div class="text-center logo"><img src="./assets/logo.png" /></div>
             </b-col>
           <b-col class="text-right">
-            <span class="menu-link text-red"><font-awesome-icon icon="bars" /></span>
+            <span 
+            class="menu-link text-red"
+            @click="openMenu"
+            >
+            <transition name="fade">
+              <font-awesome-icon icon="bars" v-if="showPopupMenu == false" />
+              <font-awesome-icon icon="times" v-else />
+            </transition>
+            </span>
           </b-col>
         </b-row>
       </b-container>
     </header>
-    <section class="popup-menu">
-      <nav>
-        <b-nav class="pb-3 pt-3">
-          <b-nav-item :to="{name:'Calculator'}">Calculator</b-nav-item>
-          <b-nav-item>Gradient</b-nav-item>
-          <b-nav-item>Form</b-nav-item>
-        </b-nav>
-      </nav>
-    </section>
+    <transition name="fade">
+      <section class="popup-menu active" v-if="showPopupMenu">
+        <b-container>
+          <b-row class="text-center">
+            <b-col md="3" offset-md="5">
+              <nav>
+                <b-nav vertical class="pb-3 pt-3">
+                  <b-nav-item :to="{name:'Calculator'}">Calculator</b-nav-item>
+                  <b-nav-item>Gradient</b-nav-item>
+                  <b-nav-item>Form</b-nav-item>
+                </b-nav>
+              </nav>
+            </b-col>
+          </b-row>
+        </b-container>
+      </section>
+    </transition>
     <section class="component-section">
       <router-view/>
     </section>
@@ -49,20 +65,20 @@
 
 export default {
   data: () => ({
-    siteName: 'Logo'
-  })
+    showPopupMenu: false 
+  }),
+  methods: {
+    openMenu() {      
+      this.showPopupMenu= !this.showPopupMenu
+      this.hideShowScroll()
+    },
+     hideShowScroll() {
+      (this.showPopupMenu) ? document.querySelector('body').style = 'overflow: hidden' : document.querySelector('body').style = 'overflow: auto'
+    }
+  }
 }
 </script>
   
 <style>
-    header .main-menu{
-      list-style: none
-    }
-    header .main-menu li{
-      display: inline-block;
-      margin-right: 5px;
-    }
-    header .main-menu li:last-child{
-      margin-right:0px;
-    }
+  
 </style>
