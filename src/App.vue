@@ -27,14 +27,14 @@
       </b-container>
     </header>
     <transition name="fade">
-      <section class="popup-menu active" v-if="showPopupMenu">
+      <section class="popup-menu active" v-show="showPopupMenu">
         <b-container>
           <b-row class="text-center">
-            <b-col md="3" offset-md="5">
+            <b-col md="3" class="centered-menu">
               <nav>
                 <b-nav vertical class="pb-3 pt-3">
-                  <b-nav-item :to="{name:'Calculator'}">Calculator</b-nav-item>
-                  <b-nav-item>Gradient</b-nav-item>
+                  <b-nav-item :to="{name: 'Calculator'}">Calculator</b-nav-item>
+                  <b-nav-item :to="{name: 'ProgressBar'}">Gradient</b-nav-item>
                   <b-nav-item>Form</b-nav-item>
                 </b-nav>
               </nav>
@@ -80,5 +80,7 @@ export default {
 </script>
   
 <style>
-  
+  .centered-menu{
+    margin: 0 auto;
+  }
 </style>

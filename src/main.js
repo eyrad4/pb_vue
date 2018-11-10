@@ -16,9 +16,6 @@ library.add(faSearch, faBars, faTimes, faStar)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-
-Vue.component('app-calculator', Calculator)
-
 Vue.use(router)
 Vue.use(BootstrapVue);
 Vue.use(Vuelidate)
