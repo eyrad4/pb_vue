@@ -11,10 +11,29 @@
             <form @submit.prevent="submitForm">
               <transition name="fade" :duration="250">
                 <div class="inputs" v-show="openHiddenForm">
-                  <p><input type="text" v-model="$v.form.name.$model" placeholder="Name" :class="{ 'error': $v.form.name.$error }"></p>
-                  <p><input type="text" v-model="$v.form.phone.$model" placeholder="Phone" :class="{ 'error': $v.form.phone.$error }"></p>
-                  <p><input type="text" v-model="$v.form.email.$model" placeholder="Email" :class="{ 'error': $v.form.email.$error }"></p>
-                  <p><textarea v-model="$v.form.message.$model" placeholder="Enter your message" :class="{ 'error': $v.form.message.$error }"></textarea></p>
+                  <p><input 
+                    type="text" 
+                    v-model="$v.form.name.$model" 
+                    placeholder="Name" 
+                    :class="{ 'error': $v.form.name.$error }"
+                  ></p>
+                  <p><input 
+                    type="text" 
+                    v-model="$v.form.phone.$model" 
+                    placeholder="Phone" 
+                    :class="{ 'error': $v.form.phone.$error }"
+                  ></p>
+                  <p><input 
+                    type="text" 
+                    v-model="$v.form.email.$model" 
+                    placeholder="Email" 
+                    :class="{ 'error': $v.form.email.$error }"
+                  ></p>
+                  <p><textarea 
+                    v-model="$v.form.message.$model" 
+                    placeholder="Enter your message" 
+                    :class="{ 'error': $v.form.message.$error }"
+                  ></textarea></p>
                 </div>
               </transition>
               <template v-if="openHiddenForm === true">

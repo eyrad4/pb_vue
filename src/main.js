@@ -5,7 +5,6 @@ import router from './router'
 import App from './App.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import Calculator from './components/Calculator'
 require('./assets/css/app.css')
 import Vuelidate from 'vuelidate'
 import { library } from '@fortawesome/fontawesome-svg-core'

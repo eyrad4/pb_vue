@@ -11,7 +11,12 @@
     <b-row class="gallery-block">
       <b-col>
         <div class="auto-resize text-center">
-          <img class="img-fluid" src="./../assets/calc.jpg" alt="" :style="{height: windowHeight + 'px'}" />
+          <img 
+            class="img-fluid" 
+            src="./../assets/calc.jpg" 
+            alt="" 
+            :style="{height: windowHeight + 'px'}" 
+          />
         </div>
       </b-col>
     </b-row>
@@ -37,7 +42,7 @@
               <span 
                 class="menu-link text-red close-calculator"
                 @click="showCalculator = !showCalculator"
-                ><font-awesome-icon icon="times" /></span>
+              ><font-awesome-icon icon="times" /></span>
             <h2>Mortgage Calculator</h2>
             <b-form @submit.prevent="calculated">
               <b-form-group
@@ -178,7 +183,7 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(function() {
+    this.$nextTick(() => {
       window.addEventListener('resize', this.getWindowHeight);
 
       this.getWindowHeight()

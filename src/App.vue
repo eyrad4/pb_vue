@@ -49,9 +49,15 @@
             <b-col md="3" class="centered-menu">
               <nav>
                 <b-nav vertical class="pb-3 pt-3">
-                  <b-nav-item @click="showPopupMenu = !showPopupMenu" :to="{name: 'Calculator'}">Calculator</b-nav-item>
-                  <b-nav-item @click="showPopupMenu = !showPopupMenu" :to="{name: 'ProgressBar'}">Gradient</b-nav-item>
-                  <b-nav-item @click="showPopupMenu = !showPopupMenu" :to="{name: 'Form'}">Form</b-nav-item>
+                  <b-nav-item 
+                    @click="toComponent('Calculator')"
+                  >Calculator</b-nav-item>
+                  <b-nav-item 
+                    @click="toComponent('ProgressBar')"
+                  >Gradient</b-nav-item>
+                  <b-nav-item 
+                    @click="toComponent('Form')"
+                  >Form</b-nav-item>
                 </b-nav>
               </nav>
             </b-col>
@@ -75,6 +81,13 @@ export default {
     },
      hideShowScroll() {
       (this.showPopupMenu) ? document.querySelector('body').style = 'overflow: hidden' : document.querySelector('body').style = 'overflow: auto'
+    },
+    toComponent(componentName) {
+      this.showPopupMenu = !this.showPopupMenu
+      this.$router.push({name: componentName});
+      this.$nextTick(() => {
+        this.hideShowScroll()
+      })
     }
   }
 }

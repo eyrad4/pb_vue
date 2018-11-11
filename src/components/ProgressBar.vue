@@ -7,7 +7,11 @@
           <h2>{{ bar2.counter }}/{{ bar2.max }} Investors</h2>
           <h3>Recruited of the moment</h3>
           <div class="progress-bar-container">
-            <div class="progressed" :class="progressClass" :style="{width: width  + '%' }"></div>
+            <div 
+              class="progressed" 
+              :class="progressClass" 
+              :style="{width: width  + '%' }"
+            ></div>
           </div>
           <div class="progress-text text-left">Numbers of investor recruired</div>
 
