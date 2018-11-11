@@ -204,7 +204,9 @@ export default {
     },
     runCalculator() {
       this.showCalculator = !this.showCalculator
-      this.calculated()
+      setTimeout(() => {
+        this.calculated()
+      }, 250)
     }
   },  
   beforeDestroy() {

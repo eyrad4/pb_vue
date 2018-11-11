@@ -74,9 +74,11 @@ export default {
   }
   .progress-bar-container .progressed{
     background-image: linear-gradient(to right, rgb(0, 0, 104) , rgb(74, 74, 253));
-    position: relative;
-    -webkit-transition: width 2s;
+    position: relative;    
     transition: width 2s;
+    -webkit-transition: width 2s;
+    -moz-transition: width 2s; 
+    -o-transition: width 2s;
     border-radius: 5px 0px 0px 5px;
   }
   .progress-bar-container .progressed.complete{

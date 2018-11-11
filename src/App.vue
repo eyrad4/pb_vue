@@ -25,27 +25,12 @@
           </b-col>
         </b-row>
       </b-container>
-    </header>
-    <transition name="fade">
-      <section class="popup-menu active" v-show="showPopupMenu">
-        <b-container>
-          <b-row class="text-center">
-            <b-col md="3" class="centered-menu">
-              <nav>
-                <b-nav vertical class="pb-3 pt-3">
-                  <b-nav-item :to="{name: 'Calculator'}">Calculator</b-nav-item>
-                  <b-nav-item :to="{name: 'ProgressBar'}">Gradient</b-nav-item>
-                  <b-nav-item>Form</b-nav-item>
-                </b-nav>
-              </nav>
-            </b-col>
-          </b-row>
-        </b-container>
+    </header>    
+    <transition name="fade" :duration="1000">
+      <section class="component-section">
+        <router-view/>
       </section>
     </transition>
-    <section class="component-section">
-      <router-view/>
-    </section>
     <footer>
       <b-container>
         <b-row>
@@ -57,7 +42,23 @@
         </b-row>
       </b-container>
     </footer>
-    
+    <transition name="fade" :duration="100">
+      <section class="popup-menu active" v-show="showPopupMenu">
+        <b-container>
+          <b-row class="text-center">
+            <b-col md="3" class="centered-menu">
+              <nav>
+                <b-nav vertical class="pb-3 pt-3">
+                  <b-nav-item @click="showPopupMenu = !showPopupMenu" :to="{name: 'Calculator'}">Calculator</b-nav-item>
+                  <b-nav-item @click="showPopupMenu = !showPopupMenu" :to="{name: 'ProgressBar'}">Gradient</b-nav-item>
+                  <b-nav-item @click="showPopupMenu = !showPopupMenu" :to="{name: 'Form'}">Form</b-nav-item>
+                </b-nav>
+              </nav>
+            </b-col>
+          </b-row>
+        </b-container>
+      </section>
+    </transition>
   </div>
 </template>
 
