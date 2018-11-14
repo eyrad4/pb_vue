@@ -41,8 +41,8 @@ export default new Vuex.Store({
     },
     sendFile({commit}, params) {
       let data = new FormData()
-      data.append('file', params.file, headers)
-      axios.post(URL.file, data).then(response => (
+      data.append('file', params.file)
+      axios.post(URL.file, data, headers).then(response => (
         commit('setFileDownload', response.data)
       ))
     }
