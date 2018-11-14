@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Calculator from '@/components/Calculator'
 import ProgressBar from '@/components/ProgressBar'
 import Form from '@/components/Form'
+import PopupForm from '@/components/PopupForm'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/form',
       name: 'Form',
       component: Form
+    },
+    {
+      path: '/popupform',
+      name: 'PopupForm',
+      component: PopupForm
     }
   ],
   mode: 'history'
