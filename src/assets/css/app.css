@@ -18,6 +18,7 @@ header .logo img{
 }
 header .search{
   padding-top: 10px;
+  position: relative;
 }
 header .search .search-btn{
   font-size: 12px;

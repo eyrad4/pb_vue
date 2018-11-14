@@ -4,10 +4,11 @@
       <b-container fluid>
         <b-row fluid>
           <b-col>
-            <div class="search">
+            <!--div class="search">
               <span class="search-btn text-red"><font-awesome-icon icon="search" /></span>
               <b-input value="" name="" placeholder="Search agents or properties by address, neighborhood, or zip code" />
-            </div>
+            </div-->
+            <app-search></app-search>
           </b-col>
           <b-col>
             <div class="text-center logo"><img src="./assets/logo.png" /></div>
@@ -72,7 +73,7 @@
 
 export default {
   data: () => ({
-    showPopupMenu: false 
+    showPopupMenu: false
   }),
   methods: {
     openMenu() {      

@@ -43,13 +43,12 @@ export default {
   }),
   computed: {
       width() {
-        console.log('run computed')
         if (this.bar2.counter <= this.bar2.max) {
-          this.progressClass = ''
+          //this.progressClass = ''
           return (this.bar2.counter * 100) / this.bar2.max
         } else if (this.bar2.counter > this.bar2.max) {
-          this.progressClass = 'complete'
-           return 100
+          //this.progressClass = 'complete'
+          return 100
         }
       }
   }
