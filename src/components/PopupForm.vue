@@ -333,8 +333,6 @@ export default {
     margin-top: 5px;
     display: flex;
   }
-  .purchases-item-block .item .item-image{
-  }
   .purchases-item-block .item .item-image img{
     width: 100px;
     height: 100px;
