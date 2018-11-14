@@ -59,9 +59,12 @@
                   <b-nav-item 
                     @click="toComponent('Form')"
                   >Form</b-nav-item>
-                   <b-nav-item 
+                  <b-nav-item 
                     @click="toComponent('PopupForm')"
                   >PopupForm</b-nav-item>
+                  <b-nav-item 
+                    @click="toComponent('Download')"
+                  >Download</b-nav-item>
                 </b-nav>
               </nav>
             </b-col>

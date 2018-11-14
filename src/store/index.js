@@ -7,16 +7,27 @@ Vue.use(Vuex)
 const API = 'https://jsonplaceholder.typicode.com/'
 
 const URL  = {
-  search: API + 'posts'
+  search: API + 'posts',
+  file: 'http://zohocrm/upload.php'
+}
+
+const headers = {
+  headers: {
+    'Content-Type': 'application/json'
+  }
 }
 
 export default new Vuex.Store({
   state: {
-    searchResults: ''
+    searchResults: '',
+    fileDownload: ''
   },
   mutations: {
     setSearchResults(state, params) {   
       state.searchResults = params
+    },
+    setFileDownload(state, params) {
+      state.fileDownload = params.tmp_name
     }
   },
   actions: {
@@ -27,7 +38,14 @@ export default new Vuex.Store({
     },
     clearSearch({commit}) {
       commit('setSearchResults','')
+    },
+    sendFile({commit}, params) {
+      let data = new FormData()
+      data.append('file', params.file, headers)
+      axios.post(URL.file, data).then(response => (
+        commit('setFileDownload', response.data)
+      ))
     }
-  }
+  }  
 })
 
