@@ -24,7 +24,7 @@
     <transition name="fade">
       <div 
         class="loading"
-        
+        v-if="results.length === 0 || loading === true" 
       ><h2>Loading...</h2></div>
     </transition>
   </section>
@@ -90,7 +90,7 @@ export default {
   }
   .lists-items .loading{
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
     color: royalblue;
     position: absolute;
     bottom: -30px;
