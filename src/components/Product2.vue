@@ -50,7 +50,6 @@ export default {
     },
     wrapAddItem() {
       this.loading = true
-      console.log(this.loading)
       setTimeout(() => {
         this.addItem()
       }, 1000)
@@ -60,7 +59,6 @@ export default {
       this.page = (this.page === 1) ? this.page : this.page + 1      
       this.$store.dispatch('getItems', {page: this.page, perPage: this.perPage}).then(() => {
         this.loading = false
-        console.log(this.loading)
       })
     }
   },
