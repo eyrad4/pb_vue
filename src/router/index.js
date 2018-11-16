@@ -5,6 +5,8 @@ import ProgressBar from '@/components/ProgressBar'
 import Form from '@/components/Form'
 import PopupForm from '@/components/PopupForm'
 import Download from '@/components/Download'
+import Product from '@/components/Product'
+import Product2 from '@/components/Product2'
 
 Vue.use(Router)
 
@@ -34,6 +36,16 @@ export default new Router({
       path: '/download',
       name: 'Download',
       component: Download
+    },
+    {
+      path: '/product',
+      name: 'Product',
+      component: Product
+    },
+    {
+      path: '/product2',
+      name: 'Product2',
+      component: Product2
     }
   ],
   mode: 'history'

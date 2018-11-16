@@ -12,6 +12,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSearch, faBars, faTimes, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Search from './components/General/Search.vue'
+import List from './components/General/List.vue'
+import List2 from './components/General/List2.vue'
 library.add(faSearch, faBars, faTimes, faStar)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -21,6 +23,8 @@ Vue.use(BootstrapVue);
 Vue.use(Vuelidate)
 
 Vue.component('app-search', Search)
+Vue.component('app-list', List)
+Vue.component('app-list-copy', List2)
 
 Vue.config.productionTip = false
 
@@ -29,6 +33,8 @@ new Vue({
   store,
   components: {
     'app-search': Search,
+    'app-list': List,
+    'app-list-copy': List2,
   },
   render: h => h(App),
 }).$mount('#app')

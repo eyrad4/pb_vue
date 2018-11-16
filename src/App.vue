@@ -65,6 +65,12 @@
                   <b-nav-item 
                     @click="toComponent('Download')"
                   >Download</b-nav-item>
+                   <b-nav-item 
+                    @click="toComponent('Product')"
+                  >Product</b-nav-item>
+                  <b-nav-item 
+                    @click="toComponent('Product2')"
+                  >Product2</b-nav-item>
                 </b-nav>
               </nav>
             </b-col>
