@@ -55,7 +55,7 @@ export default new Vuex.Store({
     },
     getItems({commit}, params) {
       axios.get(URL.items + '?page=' + params.page + '&per_page=' + params.perPage, headers).then(response => (
-        commit('setItemsResult', Object.values(response.data))
+        commit('setItemsResult', response.data)
       ))
     }
   }  
