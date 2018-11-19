@@ -34,9 +34,7 @@ export default new Vuex.Store({
       state.fileDownload = params.tmp_name
     },
     setItemsResult(state, params) {
-      for(let index in params) {
-         state.itemsResult.push(params[index])  
-      }
+      state.itemsResult.push.apply(state.itemsResult, params)
     }
   },
   actions: {
@@ -57,7 +55,7 @@ export default new Vuex.Store({
     },
     getItems({commit}, params) {
       axios.get(URL.items + '?page=' + params.page + '&per_page=' + params.perPage, headers).then(response => (
-        commit('setItemsResult', response.data)
+        commit('setItemsResult', Object.values(response.data))
       ))
     }
   }  
